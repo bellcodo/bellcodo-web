@@ -3,6 +3,7 @@
 // It reads in all the necessary Stormpath configs, and generates the
 // appropriate environment variables.
 
+debugger;
 
 var crypto = require('crypto');
 var fs = require('fs');
@@ -41,6 +42,7 @@ rl.question('To get started, please enter your Stormpath API Key ID: ', function
 
 function createVariables() {
   var apiKey = new stormpath.ApiKey(api_key_id, api_key_secret);
+  console.log("Generated an APIKey: " + apiKey);
   var client = new stormpath.Client({apiKey: apiKey});
 
   client.createApplication(
@@ -58,6 +60,7 @@ function createVariables() {
     if (err) throw err;
 
     apps.each(function(app, next) {
+      console.log("Printing current app: " + app.name);
       if (app.name === 'stormpath-express-sample') {
         write(app);
       }else{

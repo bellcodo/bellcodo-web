@@ -1,5 +1,17 @@
 # stormpath-passport-express-sample
 
+## Starting the App
+```bash
+source .env
+npm start
+```
+
+## Troubleshooting
+* Run the bootstrap script
+* The create app is not working so you have to manually create an app in
+  stormpath called 'stormpath-express-sample'
+* Make sure you source .env
+
 A sample Passport + Express application which demonstrates how to successfully use
 [passport-stormpath](https://github.com/stormpath/passport-stormpath) to handle
 user authentication and authorization for your web app.
